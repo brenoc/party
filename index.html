@@ -2,8 +2,95 @@
 <html>
 <head>
   <title>Breno Party</title>
+  <meta name="viewport" content="width=device-width">
+  <style>
+  /* -------------------------------------
+   ___ ___ ___ ___ _____
+  | _ \ __/ __| __|_   _|
+  |   / _|\__ \ _|  | |
+  |_|_\___|___/___| |_|
+
+  -------------------------------------- */
+  * {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+    font-family: MicrosoftSansSerif;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    background: #3dff32;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjM2RmZjMyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMzBmNGZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmMDBmYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #3dff32), color-stop(50%, #30f4ff), color-stop(100%, #ff00fa));
+    background: -webkit-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+    background: -o-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+    background: -ms-linear-gradient(-45deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+    background: linear-gradient(135deg, #3dff32 0%, #30f4ff 50%, #ff00fa 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3dff32', endColorstr='#ff00fa', GradientType=1);
+    background-attachment: fixed;
+  }
+  .wordart {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .superhero {
+    top: 100px;
+    left: 200px;
+    transform: skew(0, -15deg) scale(2, 2.5);
+    -webkit-transform: skew(0, -15deg) scale(2, 2.5);
+    -moz-transform: skew(0, -15deg) scale(2, 2.5);
+    -o-transform: skew(0, -15deg) scale(2, 2.5);
+    -ms-transform: skew(0, -15deg) scale(2, 2.5);
+    font-size: 1.12em;
+  }
+  .superhero .text {
+    font-family: Impact;
+    background: #fdea00;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZWEwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ0JSIgc3RvcC1jb2xvcj0iI2ZkY2YwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmYzI3MDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #fdea00 0%, #fdcf00 44%, #fc2700 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fdea00), color-stop(44%, #fdcf00), color-stop(100%, #fc2700));
+    background: -webkit-linear-gradient(top, #fdea00 0%, #fdcf00 44%, #fc2700 100%);
+    background: -o-linear-gradient(top, #fdea00 0%, #fdcf00 44%, #fc2700 100%);
+    background: -ms-linear-gradient(top, #fdea00 0%, #fdcf00 44%, #fc2700 100%);
+    background: linear-gradient(to bottom, #fdea00 0%, #fdcf00 44%, #fc2700 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdea00', endColorstr='#fc2700', GradientType=0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .superhero .text:before {
+    content: attr(data-text);
+    position: absolute;
+    z-index: -1;
+    text-shadow: 0.01em 0em 0 #802700, 0em 0.01em 0 #c23d00,0.02em 0.01em 0 #802700, 0.01em 0.02em 0 #c23d00,0.03em 0.02em 0 #802700, 0.02em 0.03em 0 #c23d00,0.04em 0.03em 0 #802700, 0.03em 0.04em 0 #c23d00,0.05em 0.04em 0 #802700, 0.04em 0.05em 0 #c23d00,0.06em 0.05em 0 #802700, 0.05em 0.06em 0 #c23d00,0.07em 0.06em 0 #802700, 0.06em 0.07em 0 #c23d00,0.08em 0.07em 0 #802700, 0.07em 0.08em 0 #c23d00;
+  }
+  </style>
 </head>
 <body>
+  <div class="resizable active" style="width: 287.921875px; height: 189.344573974609px; left: 63px; top: 21px; transform: scaleX(1.20491669832311) scaleY(1.17428542739453);">
+    <div class="wrapper">
+      <div class="wordart superhero">
+        <span class="text" data-text="Breno Party">Breno Party</span>
+      </div>
+    </div>
+  </div>
+
   <video poster="http://i.imgur.com/qDUzWoyh.jpg" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 620px; height: 460px;">
     <source src="http://i.imgur.com/qDUzWoy.webm" type="video/webm">
     <source src="http://i.imgur.com/qDUzWoy.mp4" type="video/mp4">
